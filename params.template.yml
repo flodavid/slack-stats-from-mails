@@ -1,0 +1,12 @@
+email:
+  smpt-port: 993
+  smtp-server: imap.gmail.com
+  username: my.user.mail@gmail.com
+  password: myPasswordOrApplicationPassword
+slack:
+  name: mySlackInstanceNickname
+
+# Hotmail
+  # smtp-server: Outlook.office365.com
+  # username: my.user.mail@outlook.com
+  # password: myPasswordOrApplicationPassword
