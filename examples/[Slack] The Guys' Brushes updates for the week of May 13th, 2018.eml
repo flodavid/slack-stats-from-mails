@@ -1,0 +1,499 @@
+Delivered-To: fl.david.53@gmail.com
+Received: by 2002:a05:6504:1161:0:0:0:0 with SMTP id t1csp1060362ltn;
+        Wed, 6 May 2020 05:32:52 -0700 (PDT)
+X-Google-Smtp-Source: APiQypI6d9Q7hXbnzLUH7sIGH5vEnm/UV2SyrnPNQLI97RyqnMCOiRhmHcwgoptdCbb5biXl43Te
+X-Received: by 2002:a05:6000:146:: with SMTP id r6mr9857768wrx.9.1588768372629;
+        Wed, 06 May 2020 05:32:52 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1588768372; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=dVy/pTKKOgK5JswMLSYatNimdRGvXPFY94BZE0ppm/+L5lU6kw0kL7qWLJdEeA+ER8
+         9qQb8Oiya6MqSzGcTbr9QKzpqqEGJ/S3Xr3XZ4rdRgwdGpgDAWfl4x0jbmmU6Qvjeg6+
+         kLUQjyj2jm3nQJ5YKGbG0rO39urDZFSduiGEQP//fs8rCBTBC2oD3o2XMIJSxH7U52Gr
+         HpJEJhmeFwHi1R9qxTDuL5IY5poEkwXUHzf8J3bAw3FNqP/nOwNh3gmWYiqtqoqLpzPJ
+         OjJ4rxalu1puo3AotqkquTPMZGkoQjNNhVMq4Dt6zyz+8jMTbNwm7MAuba/sF/cDX5F+
+         Aujg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from;
+        bh=/d6M7gVfvZr7KtUSeMnbYY82FjO5VOfiBe31eyhtkCU=;
+        b=0B3sHpNizBsoSTqbrU27V3nBPPocic7KoWR3zZpBD1C/u4FYDkwWroTWf5bHZErQhb
+         QbJYqWyQwyQVWsZuPfoWgyw2WJWu1SoLkuyL9ClmBXLM8YzxITlwxXiyogyFlXM2hMqX
+         phwNmf1bupP0LvYEppWkNKRh2W2/ruzhNVC06kal5eJoRcxeYEoi36Ct4N+7xmw6ZczI
+         ycl1dPZt2q+FrhQrGryOh6hWeyyGfQSlVyNq0eWNgK5yPSxurraDFWaibY7ye2HmzJFt
+         kLTzkbUT9VUfCLtpZ5DaWK72J0IMpgC9rXwhMPA7tpdFdJ+8A/JWZe4dRmk4EhuDEmcR
+         yQLg==
+ARC-Authentication-Results: i=2; mx.google.com;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of xxxxxxxxxx@hotmail.fr designates 40.92.89.91 as permitted sender) smtp.mailfrom=xxxxxxxxxx@hotmail.fr;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hotmail.fr
+Return-Path: <xxxxxxxxxx@hotmail.fr>
+Received: from EUR05-DB8-obe.outbound.protection.outlook.com (mail-db8eur05olkn2091.outbound.protection.outlook.com. [40.92.89.91])
+        by mx.google.com with ESMTPS id r15si1683371wmg.164.2020.05.06.05.32.52
+        for <fl.david.53@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 06 May 2020 05:32:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of xxxxxxxxxx@hotmail.fr designates 40.92.89.91 as permitted sender) client-ip=40.92.89.91;
+Authentication-Results: mx.google.com;
+       arc=pass (i=1);
+       spf=pass (google.com: domain of xxxxxxxxxx@hotmail.fr designates 40.92.89.91 as permitted sender) smtp.mailfrom=xxxxxxxxxx@hotmail.fr;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=hotmail.fr
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=I+WD5KRiOglyeSAt1YlSNiekT/bJRHT9YBpAjn/BhNES1PTke3D2JfA/E8C5AvIYIXjiRquLr8vt5j5w3ydshMKjdmlxWIoHRv5gefwYKRg6vKAx+BffhwhAxNDMSuIaNGlHGTIy0BNhJJXbyOOyfbbYvjriyqPON8fFE65j8eoD7D272KgRZ6pTF04MLVy+7258i1ytliSUMUOPybJAzD+Q77bK1m/pafl+Qb/66chVW+r6lxSe6Fsebslst+r1k+q/DB6YbRHHPpBygplOqNWWuXbm3ofqT+ApyVNaRe4v/p4OzP1kZ36anF7M9fS6VN6tPW4KujbaPArJEOJUdg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/d6M7gVfvZr7KtUSeMnbYY82FjO5VOfiBe31eyhtkCU=;
+ b=XBFmAE4DvcUl7ob2qjDNcQRHhBCuhS4to8kHloZgx2zL2Zn4a0b6ejTN2hEXOCQ2pIZKMsdPd73vwBfjHujpV4vimh91f5jKm+pTG/o6LstLmPiu1yH3lZYCjCwADqM2ZTUjSA7pO9f+BA74CH5+Zx9ZMgDRDbEdU5PYDOKc9eRiiK8PEMmXH7HxLSp6TeGSTSXasODV2bdfGTzpc7HP9MMqhXLlIzvuLXMiX1EZ5OSDpOTgluNfZ5Q0fEg1Wv4rdrbJIiJzUwVgGi6b1OI0Ghj3KBvVD5nn2S636FH9WgC6Hl2NuOgCLFkkTCKqAb9u2Tq5vHK50QVjswdd8eGOOw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from DB8EUR05FT039.eop-eur05.prod.protection.outlook.com
+ (2a01:111:e400:fc0f::52) by
+ DB8EUR05HT170.eop-eur05.prod.protection.outlook.com (2a01:111:e400:fc0f::343)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.27; Wed, 6 May
+ 2020 12:32:48 +0000
+Received: from VI1PR07MB3168.eurprd07.prod.outlook.com
+ (2a01:111:e400:fc0f::4c) by DB8EUR05FT039.mail.protection.outlook.com
+ (2a01:111:e400:fc0f::233) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.27 via Frontend
+ Transport; Wed, 6 May 2020 12:32:48 +0000
+Received: from VI1PR07MB3168.eurprd07.prod.outlook.com
+ ([fe80::a9e9:f921:1b4:b219]) by VI1PR07MB3168.eurprd07.prod.outlook.com
+ ([fe80::a9e9:f921:1b4:b219%7]) with mapi id 15.20.2979.027; Wed, 6 May 2020
+ 12:32:48 +0000
+From: =?Windows-1252?Q?Xxx=E9xxxx_azerty?= <xxxxxxxxxx@hotmail.fr>
+To: "fl.david.53@gmail.com" <fl.david.53@gmail.com>
+Subject: TR: [Slack] The Guys' Brushes updates for the week of May 13th, 2018
+Thread-Topic: [Slack] The Guys' Brushes updates for the week of May 13th, 2018
+Thread-Index: AQHT8NqGl+0wqOHlZUuyxhv6q81mQKifYy9D
+Date: Wed, 6 May 2020 12:32:48 +0000
+Message-ID:
+ <VI1PR07MB31680AC8AB6879362181401AA7A40@VI1PR07MB3168.eurprd07.prod.outlook.com>
+References:
+ <0100016381bb9700-21bcbab2-ad4b-49aa-861f-507b691aad8c-000000@email.amazonses.com>
+In-Reply-To:
+ <0100016381bb9700-21bcbab2-ad4b-49aa-861f-507b691aad8c-000000@email.amazonses.com>
+Accept-Language: fr-FR, en-US
+Content-Language: fr-FR
+X-Hashtags: #Newsletters
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-incomingtopheadermarker:
+ OriginalChecksum:647B2D085005D0D0CC2D5CC6E9AF16DCF33F19FE08DA108DDAFE519775DDA8C0;UpperCasedChecksum:8864184A6A8D450FD178D65AD36E2C61BC1BC75BBE4FEBC22B287AA1FE3998BC;SizeAsReceived:7044;Count:46
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [3BMTqA5PCfbpXwiurkxkeoWaySlf4gCe]
+x-ms-publictraffictype: Email
+x-incomingheadercount: 46
+x-eopattributedmessage: 0
+x-ms-office365-filtering-correlation-id: 648fe380-8f55-42bb-af30-08d7f1b99613
+x-ms-traffictypediagnostic: DB8EUR05HT170:
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ OxDIjeMAAtnCSKlhb8U+7nPXuxqDnDTEjxZ9V669W/RSn8xWyi0hDEX8uIbxKXOAlEU86e0e/ga9eRhvV5LeSJxiQ11byArUYfXjtQz0U01ZqA8Q6rbVUSDpZcCe/TBsNUVwIlsVxLKczDwH4VWwbjbjcp2nvW4/SP/47qRKKSYjJg+K/JTbg2jnIu2uZI8fknzmNwpj7TI6Uc3pymYVWVAGvEGmNJ9FkAkLCKGdaV4NMKhR4l3WXgr+JzGA6aHi
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:0;SRV:;IPV:NLI;SFV:NSPM;H:VI1PR07MB3168.eurprd07.prod.outlook.com;PTR:;CAT:NONE;SFTY:;SFS:;DIR:OUT;SFP:1901;
+x-ms-exchange-antispam-messagedata:
+ IdJYjc3rzdjnMUdsLy+ta/s74Kg+2OaUQr5VUNQd+AuOMMkyWLEmdOFWtlvW3B8/L0PxFv1iOv0tkCh6sv/M7fov1lWOqno8ELqaoo4nLVexTHsLddSVjgeU+0ttw7uf5HwovKaAM26DfP6LOzjazw==
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/alternative;
+	boundary="_000_VI1PR07MB31680AC8AB6879362181401AA7A40VI1PR07MB3168eurp_"
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 648fe380-8f55-42bb-af30-08d7f1b99613
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 May 2020 12:32:48.4447
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8EUR05HT170
+
+--_000_VI1PR07MB31680AC8AB6879362181401AA7A40VI1PR07MB3168eurp_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+________________________________
+De : Slack <feedback@slack.com>
+Envoy=E9 : lundi 21 mai 2018 08:05
+=C0 : xxxxxxxxxx@hotmail.fr <xxxxxxxxxx@hotmail.fr>
+Objet : [Slack] The Guys' Brushes updates for the week of May 13th, 2018
+
+
+Want more useful (and beautiful) data about the way your team uses Slack?
+Check out Slack Analytics.<https://my.slack.com/stats?utm_source=3Dweeklyem=
+ail>
+
+[https://guysbrushes.slack.com/x-t4120521445-366524175168/img/email/slack_l=
+ogo.png]<https://www.slack.com>
+
+[https://a.slack-edge.com/66f9/img/email/status@2x.png]
+
+The Guys' Brushes=92 Weekly Summary
+Sunday, May 13th =96 Saturday, May 19th
+
+Hope you had a good weekend! Here's a summary of what happened in your work=
+space last week:
+
+[https://a.slack-edge.com/7f6e/img/email/icn_add@2x.png] 1 member was added
+Valentin Lequeux<https://guysbrushes.slack.com/x-t4120521445-366524175168/t=
+eam/UAR0P4L6P>
+[https://a.slack-edge.com/66f9/img/email/icn_disabled@2x.png] 1 account was=
+ deactivated
+Valentin Lequeux<https://guysbrushes.slack.com/x-t4120521445-366524175168/t=
+eam/UAR0P4L6P>
+[https://a.slack-edge.com/66f9/img/email/icn_inactive@2x.png] 1 member beca=
+me inactive
+girly<https://guysbrushes.slack.com/x-t4120521445-366524175168/team/U0GDWHG=
+TC>
+
+View a complete list of member changes<https://guysbrushes.slack.com/x-t412=
+0521445-366524175168/admin/billing/changes>
+
+________________________________
+
+Your members sent a total of 1,808 messages last week (that's 1,606 more th=
+an the week before). Of those, 70% were in public channels, 4% were in priv=
+ate channels, and 26% were direct messages. Your members also uploaded 21 f=
+iles (that's 11 more than the week before).
+
+[https://slack.com/email_chart?chart_type=3Dmessages_by_type&team_id=3DT043=
+JFBD3&ts=3D1526889943&signature=3Dffdfa4a731c24bed04ebc53564e2dc18af428b2c]=
+<https://guysbrushes.slack.com/x-t4120521445-366524175168/admin/stats>
+
+Looking for more stats? Check out your workspace's stats page<https://guysb=
+rushes.slack.com/x-t4120521445-366524175168/admin/stats>.
+
+The busiest hour last week was 11-12pm on Tuesday, when your workspace sent=
+ 158 messages. Holy speedtyping!
+
+Your workspace has 11 owners, including: ascris64, caminin, flo5324, infern=
+, and jeje (see all<https://guysbrushes.slack.com/x-t4120521445-36652417516=
+8/admin>). There are 7 admins, including: adrien, bob, exo, johan, and lenk=
+onata (see all<https://guysbrushes.slack.com/x-t4120521445-366524175168/adm=
+in>). In total there are 36 people in your workspace (up 1 from last week) =
+(that's not including 19 deactivated accounts).
+
+Remember: it's important to keep the list of owners and admins up to date<h=
+ttps://guysbrushes.slack.com/x-t4120521445-366524175168/admin> since they c=
+ontrol your workspace's settings.
+
+Your workspace is on Slack's Free plan, which is free to use for as long as=
+ you want for teams of all sizes. Interested in unlimited archive access an=
+d integrations, single sign-on, custom data retention, and more? Check out =
+our paid plans<https://guysbrushes.slack.com/x-t4120521445-366524175168/pri=
+cing> to learn all about it.
+
+This email is sent to Workspace Owners and Admins of active workspaces. If =
+you'd prefer not to receive these emails, you can unsubscribe here<https://=
+guysbrushes.slack.com/unsub/U0CQG1J7Q-dc619fd413-weekly>.
+
+Made by Slack Technologies, Inc<https://slack.com>  =95  Our Blog <https://=
+slackhq.com>
+500 Howard Street  =95  San Francisco, CA  =95  94105  =95  United States
+
+--_000_VI1PR07MB31680AC8AB6879362181401AA7A40VI1PR07MB3168eurp_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Helvetica, sans-serif; font-size: 12pt;=
+ color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">
+<br>
+</div>
+<div>
+<div style=3D"font-family: Calibri, Helvetica, sans-serif; font-size: 12pt;=
+ color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"appendonsend"></div>
+<hr tabindex=3D"-1" style=3D"margin: 2rem 0px; width: 100%; border-color: c=
+urrentcolor currentcolor rgb(236, 236, 236); border-style: none none solid;=
+ border-width: medium medium 1px; border-image: none 100% / 1 / 0 stretch;d=
+isplay:inline-block; width:98%">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font style=3D"font-size: 11pt;" data=
+-ogsc=3D"" face=3D"Calibri, sans-serif" color=3D"#000000"><b>De :</b> Slack=
+ &lt;feedback@slack.com&gt;<br>
+<b>Envoy=E9 :</b> lundi 21 mai 2018 08:05<br>
+<b>=C0 :</b> xxxxxxxxxx@hotmail.fr &lt;xxxxxxxxxx@hotmail.fr&gt;<br>
+<b>Objet :</b> [Slack] The Guys' Brushes updates for the week of May 13th, =
+2018</font>
+<div>&nbsp;</div>
+</div>
+<div>
+<table style=3D"border-collapse: collapse; line-height: 24px; margin: 0px; =
+padding: 0px; width: 100%; font-size: 17px; color: rgb(55, 55, 55); backgro=
+und: rgb(249, 249, 249) none repeat scroll 0% 0%;" width=3D"100%" cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse" valign=3D"top">
+<table style=3D"border-collapse: collapse;" data-ogsb=3D"" width=3D"100%" c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" bgcolor=3D"#4B6BC6">
+<tbody>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse; padding:20px 16px =
+8px" valign=3D"bottom">
+<div style=3D"text-align: center; color: rgb(255, 255, 255); font-size: 17p=
+x; font-weight: normal; line-height: 20px;">
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+Want more useful (and beautiful) data about the way your team uses Slack? <=
+br>
+<a href=3D"https://my.slack.com/stats?utm_source=3Dweeklyemail" style=3D"fo=
+nt-weight: bold; text-decoration: underline; color: rgb(255, 255, 255);">Ch=
+eck out Slack Analytics.</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"border-collapse: collapse;border-collapse:collapse" width=
+=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tbody>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse; padding:20px 16px =
+12px" valign=3D"bottom">
+<div style=3D"text-align:center"><a href=3D"https://www.slack.com" style=3D=
+"font-weight: bold; color: rgb(67, 159, 224); text-decoration: none;"><img =
+style=3D"outline: currentcolor none medium; text-decoration: none;border: m=
+edium none;outline:none; text-decoration:none; border:none" width=3D"120" h=
+eight=3D"36" src=3D"https://guysbrushes.slack.com/x-t4120521445-36652417516=
+8/img/email/slack_logo.png"></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse" valign=3D"top">
+<table style=3D"border-collapse: collapse; background: white none repeat sc=
+roll 0% 0%; border-radius: 0.5rem; margin-bottom: 1rem;" cellspacing=3D"0" =
+cellpadding=3D"32" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse" width=3D"546" vali=
+gn=3D"top">
+<div style=3D"max-width:600px; margin:0 auto">
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px; text-align:center">
+<img style=3D"outline: currentcolor none medium; text-decoration: none;outl=
+ine:none; text-decoration:none; width:76px" width=3D"76" height=3D"76" src=
+=3D"https://a.slack-edge.com/66f9/img/email/status@2x.png"></p>
+<h2 style=3D"color: rgb(58, 59, 60); line-height: 30px; margin: 0px auto 0.=
+75rem; font-size: 1.8rem; text-align: center;">
+The Guys' Brushes=92 Weekly Summary </h2>
+<h3 style=3D"line-height: 26px; color: rgb(58, 59, 60); font-size: 1.2rem; =
+text-align: center; margin: 0px auto 1rem;">
+Sunday, May 13th =96 Saturday, May 19th </h3>
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+Hope you had a good weekend! Here's a summary of what happened in your work=
+space last week:</p>
+<div style=3D"padding-left:1.5rem; margin-bottom:16px; line-height:24px"><i=
+mg style=3D"outline: currentcolor none medium; text-decoration: none;outlin=
+e:none; text-decoration:none; width:18px; float:left; margin-top:3px; margi=
+n-right:1rem" width=3D"18" height=3D"18" src=3D"https://a.slack-edge.com/7f=
+6e/img/email/icn_add@2x.png"><span style=3D"display:block; margin-left:2.1r=
+em">
+<strong>1 member was added</strong><br>
+<a href=3D"https://guysbrushes.slack.com/x-t4120521445-366524175168/team/UA=
+R0P4L6P" style=3D"font-weight: bold; color: rgb(67, 159, 224); text-decorat=
+ion: none;">Valentin Lequeux</a>
+</span></div>
+<div style=3D"padding-left:1.5rem; margin-bottom:16px; line-height:24px"><i=
+mg style=3D"outline: currentcolor none medium; text-decoration: none;outlin=
+e:none; text-decoration:none; width:18px; float:left; margin-top:3px; margi=
+n-right:1rem" width=3D"18" height=3D"18" src=3D"https://a.slack-edge.com/66=
+f9/img/email/icn_disabled@2x.png"><span style=3D"display:block; margin-left=
+:2.1rem">
+<strong>1 account was deactivated</strong><br>
+<a href=3D"https://guysbrushes.slack.com/x-t4120521445-366524175168/team/UA=
+R0P4L6P" style=3D"font-weight: bold; color: rgb(67, 159, 224); text-decorat=
+ion: none;">Valentin Lequeux</a>
+</span></div>
+<div style=3D"padding-left:1.5rem; margin-bottom:16px; line-height:24px"><i=
+mg style=3D"outline: currentcolor none medium; text-decoration: none;outlin=
+e:none; text-decoration:none; width:18px; float:left; margin-top:3px; margi=
+n-right:1rem" width=3D"18" height=3D"18" src=3D"https://a.slack-edge.com/66=
+f9/img/email/icn_inactive@2x.png"><span style=3D"display:block; margin-left=
+:2.1rem">
+<strong>1 member became inactive</strong><br>
+<a href=3D"https://guysbrushes.slack.com/x-t4120521445-366524175168/team/U0=
+GDWHGTC" style=3D"font-weight: bold; color: rgb(67, 159, 224); text-decorat=
+ion: none;">girly</a>
+</span></div>
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+<a href=3D"https://guysbrushes.slack.com/x-t4120521445-366524175168/admin/b=
+illing/changes" style=3D"font-weight: bold; color: rgb(67, 159, 224); text-=
+decoration: none;">View a complete list of member changes</a></p>
+<hr style=3D"margin: 2rem 0px; width: 100%; border-color: currentcolor curr=
+entcolor rgb(236, 236, 236); border-style: none none solid; border-width: m=
+edium medium 1px; border-image: none 100% / 1 / 0 stretch;border:none; bord=
+er-bottom:1px solid #ECECEC; margin:1.5rem 0; width:100%">
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+Your members sent a total of <strong>1,808 messages</strong> last week (tha=
+t's 1,606 more than the week before). Of those,
+<strong>70% were in public channels</strong>, <strong>4% were in private ch=
+annels</strong>, and
+<strong>26% were direct messages</strong>. Your members also uploaded <stro=
+ng>21 files</strong> (that's 11 more than the week before).
+</p>
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px; text-align:center; margin-bott=
+om:2rem">
+<a href=3D"https://guysbrushes.slack.com/x-t4120521445-366524175168/admin/s=
+tats" style=3D"font-weight: bold; color: rgb(67, 159, 224); text-decoration=
+: none;"><img style=3D"outline: currentcolor none medium; text-decoration: =
+none;border: medium none;outline:none; text-decoration:none; border:none; w=
+idth:80%" width=3D"80%" src=3D"https://slack.com/email_chart?chart_type=3Dm=
+essages_by_type&amp;team_id=3DT043JFBD3&amp;ts=3D1526889943&amp;signature=
+=3Dffdfa4a731c24bed04ebc53564e2dc18af428b2c"></a></p>
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+Looking for more stats? Check out <a href=3D"https://guysbrushes.slack.com/=
+x-t4120521445-366524175168/admin/stats" style=3D"font-weight: bold; color: =
+rgb(67, 159, 224); text-decoration: none;">
+your workspace's stats page</a>.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"border-collapse: collapse; background: white none repeat sc=
+roll 0% 0%; border-radius: 0.5rem; margin-bottom: 1rem;" cellspacing=3D"0" =
+cellpadding=3D"32" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse" width=3D"546" vali=
+gn=3D"top">
+<div style=3D"max-width:600px; margin:0 auto">
+<h3 style=3D"line-height: 26px; color: rgb(58, 59, 60); font-size: 1.2rem; =
+text-align: center; margin: 0px auto 1rem;">
+The busiest hour last week was 11-12pm on Tuesday, when your workspace sent=
+ 158 messages. Holy speedtyping!</h3>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table style=3D"border-collapse: collapse; background: white none repeat sc=
+roll 0% 0%; border-radius: 0.5rem; margin-bottom: 1rem;" cellspacing=3D"0" =
+cellpadding=3D"32" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse" width=3D"546" vali=
+gn=3D"top">
+<div style=3D"max-width:600px; margin:0 auto">
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+<strong>Your workspace has 11 owners</strong>, including: ascris64, caminin=
+, flo5324, infern, and jeje (<a href=3D"https://guysbrushes.slack.com/x-t41=
+20521445-366524175168/admin" style=3D"font-weight: bold; color: rgb(67, 159=
+, 224); text-decoration: none;">see
+ all</a>). <strong>There are 7 admins</strong>, including: adrien, bob, exo=
+, johan, and lenkonata (<a href=3D"https://guysbrushes.slack.com/x-t4120521=
+445-366524175168/admin" style=3D"font-weight: bold; color: rgb(67, 159, 224=
+); text-decoration: none;">see all</a>).
+ In total there are <strong>36</strong> people in your workspace (up <stron=
+g>1</strong> from last week) (that's not including
+<strong>19</strong> deactivated accounts). </p>
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+Remember: it's important to <a href=3D"https://guysbrushes.slack.com/x-t412=
+0521445-366524175168/admin" style=3D"font-weight: bold; color: rgb(67, 159,=
+ 224); text-decoration: none;">
+keep the list of owners and admins up to date</a> since they control your w=
+orkspace's settings.</p>
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:17px; line-height:24px; margin:0 0 16px">
+Your workspace is on Slack's <strong>Free plan</strong>, which is free to u=
+se for as long as you want for teams of all sizes. Interested in unlimited =
+archive access and integrations, single sign-on, custom data retention, and=
+ more?
+<a href=3D"https://guysbrushes.slack.com/x-t4120521445-366524175168/pricing=
+" style=3D"font-weight: bold; color: rgb(67, 159, 224); text-decoration: no=
+ne;">
+Check out our paid plans</a> to learn all about it.</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse">
+<table style=3D"border-collapse: collapse; margin-top: 1rem; background: wh=
+ite none repeat scroll 0% 0%; color: rgb(152, 158, 166);" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse; height:5px; backgr=
+ound-image:url('https://a.slack-edge.com/66f9/img/email-ribbon_@2x.png'); b=
+ackground-repeat:repeat-x; background-size:auto 5px">
+</td>
+</tr>
+<tr>
+<td style=3D"border-collapse: collapse;font-family:'Helvetica Neue',Helveti=
+ca,Arial,sans-serif!important; border-collapse:collapse; padding:16px 8px 2=
+4px" valign=3D"top" align=3D"center">
+<div style=3D"max-width:600px; margin:0 auto">
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:12px; line-height:20px; margin:0 0 16px; margin-top:16px">
+<span style=3D"max-width:380px; display:block">This email is sent to Worksp=
+ace Owners and Admins of active workspaces. If you'd prefer not to receive =
+these emails, you can
+<a href=3D"https://guysbrushes.slack.com/unsub/U0CQG1J7Q-dc619fd413-weekly"=
+ style=3D"font-weight: bold; color: rgb(67, 159, 224); text-decoration: non=
+e;">
+unsubscribe here</a>. </span></p>
+<p style=3D"font-size: 17px; margin: 0px 0px 16px; line-height: 24px;font-s=
+ize:12px; line-height:20px; margin:0 0 16px; margin-top:16px">
+Made by <a href=3D"https://slack.com" style=3D"font-weight: bold; color: rg=
+b(67, 159, 224); text-decoration: none;">
+Slack Technologies, Inc</a> &nbsp;=95&nbsp; <a href=3D"https://slackhq.com"=
+ style=3D"font-weight: bold; color: rgb(67, 159, 224); text-decoration: non=
+e;">
+Our Blog </a><br>
+<a href=3D"#" style=3D"text-decoration: none; color: rgb(152, 158, 166); fo=
+nt-weight: normal;">500 Howard Street &nbsp;=95&nbsp; San Francisco, CA &nb=
+sp;=95&nbsp; 94105 &nbsp;=95&nbsp; United States
+</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
+
+--_000_VI1PR07MB31680AC8AB6879362181401AA7A40VI1PR07MB3168eurp_--

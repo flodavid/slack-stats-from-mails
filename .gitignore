@@ -2,3 +2,6 @@
 
 # Confidential data
 params.yml
+
+# Output
+*.csv

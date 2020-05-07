@@ -4,7 +4,7 @@
 
 - Python 3
 
-### Inialization
+### Initialization
 
 + Your slack report emails must be in a folder named exactly "Slack"
 + Run: `pip install datetime yaml bs4`

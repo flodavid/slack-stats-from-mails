@@ -44,30 +44,39 @@ for emailid in msgs:
     resp, data = mail.fetch(emailid, "(RFC822)")
     raw_email = data[0][1].decode('utf-8')
     email_content = email.message_from_string(raw_email)
-    # Get html email body (It's second part. Frst part of payload is plain text)
+    # Get html email body (It's second part. First part of payload is plain text)
     html_content = email_content.get_payload()[1]
     date_retrieved = False
     parse_success = False
-
     # Decode if necessary
     if html_content['Content-Transfer-Encoding'] == "base64":
         msg = html_content.get_payload(decode=True)
     else:
         msg = html_content.get_payload(decode=False)
 
-    #print(msg)
+        # Remove weird line breaks ('=' before EOL)
+        content_charset = html_content.get_content_charset()
+        if (content_charset == 'windows-1252'):
+            msg = msg.replace("=\r\n", "")
+    
     # Create html tree from email body
     html_soup = BeautifulSoup(msg, "html.parser")
-    #print(html_soup.prettify())
-    title = html_soup.find("title")
-    
-    if title != None:
-        date_retrieved = True
-        report_date = '"' + title.text.split('the week of ')[1].split("</title>")[0].replace('st', '').replace('nd', '').replace('rd', '').replace('th', '') + '"'
 
-    #./body/table/tr/td/center/table/tr/td/div/p
+    # Get Date form the subject
+    title = html_soup.find("title")
+    # If it failed, try to retrieve the title form the Subject 
+    if title == None:
+        subject = email_content['Subject'].replace("\r\n", "")
+    else:
+        subject = title.text
+    
+    if subject != None:
+        date_retrieved = True
+        report_date = '"' + subject.split('the week of ')[1].split("</title>")[0].replace('st', '').replace('nd', '').replace('rd', '').replace('th', '') + '"'
+
+    # Parse mail html content
+
     lines = html_soup.find_all('p')
-    #print("LINES:", lines)
     for line in lines:
         text = str(line).strip()
         if " sent a total of <strong>" in text:
